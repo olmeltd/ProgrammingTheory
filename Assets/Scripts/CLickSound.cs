@@ -9,14 +9,11 @@ using UnityEngine.UI;
 
 public class CLickSound : MonoBehaviour
 {
-    public AudioClip onClickAudio;
+    //public AudioClip onClickAudio;
 
     public void MyClick()
     {
-        if (onClickAudio != null) 
-        {
-            AudioManager.Play(onClickAudio);
-        }
+        AudioManager.Play(SoundEffects.Click);
     }
     
 }

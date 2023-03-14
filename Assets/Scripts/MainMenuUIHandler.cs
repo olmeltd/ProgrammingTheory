@@ -27,8 +27,14 @@ public class MainMenuUIHandler : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void InfoSceneLoad()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void ExitGame()
     {
+        PlayerSerialize.SavePlayer(MainManager.Instance.player, "Player.json");
     #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
     #else

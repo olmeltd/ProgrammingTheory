@@ -162,8 +162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -34.765}
-  m_SizeDelta: {x: 699.2412, y: 648.3}
+  m_AnchoredPosition: {x: 2.9054, y: -34.765}
+  m_SizeDelta: {x: 1172.2544, y: 648.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218661017
 MonoBehaviour:
@@ -215,7 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf2acb246903145af61617df458028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onClickAudio: {fileID: 8300000, guid: ba52cb091d33b2245ae35c3b0104b867, type: 3}
 --- !u!1 &220029335
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b9720a2057fd846b4bc316741652e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32b8124a04ef5ac4fa0328719ff65a89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -399,6 +398,7 @@ GameObject:
   - component: {fileID: 409421166}
   - component: {fileID: 409421165}
   - component: {fileID: 409421169}
+  - component: {fileID: 409421170}
   m_Layer: 5
   m_Name: MainMenuUICanvas
   m_TagString: Untagged
@@ -499,6 +499,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd740fe81f5bdd4398b65b56d341002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &409421170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409421164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cf2acb246903145af61617df458028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &614699743
@@ -4702,7 +4714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Best commanders board
+  m_Text: Creditinals
 --- !u!222 &761783786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4723,9 +4735,8 @@ GameObject:
   - component: {fileID: 1103069523}
   - component: {fileID: 1103069522}
   - component: {fileID: 1103069521}
-  - component: {fileID: 1103069524}
   m_Layer: 5
-  m_Name: ScoreboardTPMText
+  m_Name: EditorLorem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4748,8 +4759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 41}
-  m_SizeDelta: {x: 493, y: 448.1}
+  m_AnchoredPosition: {x: 0.3462, y: 41}
+  m_SizeDelta: {x: 993.3145, y: 448.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103069521
 MonoBehaviour:
@@ -7064,7 +7075,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1.4
-  m_Text: 'Best commander : Score'
+  m_Text: "Game Author - Punks game studio.\nImage authors - Free Internet resources.\nFree
+    Asset Packs: \nBeautiful Interface, Fantasy Skybox FREE, FREE Skyboxes - SciFi
+    & Fantasy, Game music, Greeble_Materials, JMO Assets, SoftEffects, StarterAssets,
+    TextMeshPro, Unity standart assets, Newtonsoft JSON."
 --- !u!222 &1103069523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7073,20 +7087,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103069519}
   m_CullTransparentMesh: 0
---- !u!114 &1103069524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103069519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d783e54a590e04fb3a74934edf8037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreboardText: {fileID: 1103069522}
-  maxScores: 10
 --- !u!1 &1170122267
 GameObject:
   m_ObjectHideFlags: 0

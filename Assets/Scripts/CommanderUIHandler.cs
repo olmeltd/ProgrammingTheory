@@ -16,8 +16,7 @@ public class CommanderUIHandler : MonoBehaviour
         {
             if (MainManager.Instance != null)
             {
-                MainManager.Instance.LoadPlayer();
-                commander.text = MainManager.Instance.playerName;
+                commander.text = MainManager.Instance.player.playerName;
             }
             else
             {
@@ -33,8 +32,9 @@ public class CommanderUIHandler : MonoBehaviour
 
     public void StartGame()
     {
-        MainManager.Instance.playerName = commander.text;
-        MainManager.Instance.SavePlayer();
+        MainManager.Instance.player.playerName = commander.text;
+        MainManager.Instance.SaveCurrentPlayer();
+        
         SceneManager.LoadScene(4);
     }
 }
