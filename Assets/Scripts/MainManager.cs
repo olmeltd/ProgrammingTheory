@@ -20,7 +20,7 @@ public class MainManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            InitialPlayer();
+            ResetPlayer();
 
             if (player.playerName == "Player0")
             {
@@ -42,7 +42,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    private void InitialPlayer()
+    public void ResetPlayer()
     {
         player = new Player();
         player.playerName = "Player0";
