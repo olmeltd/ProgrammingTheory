@@ -49,7 +49,7 @@ public class MainManager : MonoBehaviour
         player.playerScore = 0;
         player.Inventory = new Inventory();
         player.Inventory.Items = new List<Item>();
-        player.Inventory.Items.Add(new Item() { iname = "MainKey", icount = 1 });
+       //player.Inventory.Items.Add(new Item() { iname = "MainKey", icount = 1 });
     }
 
     public void SaveCurrentPlayer() 
