@@ -13,6 +13,7 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager Instance { get; private set; }
     public Player player;
+    public bool gameOver = false;
 
     void Awake()
     {

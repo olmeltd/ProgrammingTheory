@@ -1,64 +1,87 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreboardText;
-    public int maxScores = 10;
+    [SerializeField] private int maxScoresToShow = 10;
 
-    private List<PlayerScore> scores = new List<PlayerScore>();
+    private List<ScoreEntry> scoreList = new List<ScoreEntry>();
 
-    [System.Serializable]
-    public class PlayerScore
+    private string SCORES_FILE_PATH; 
+
+    private void Start()
     {
-        public string name;
-        public int score;
-    }
-
-    void Start()
-    {
+        SCORES_FILE_PATH = Application.persistentDataPath + "/" + "scores.json";
         LoadScores();
-        UpdateScoreboard();
-        AddScore(MainManager.Instance.player.playerName, MainManager.Instance.player.playerScore);
     }
 
-    public void AddScore(string name, int score)
+    public List<ScoreEntry> GetTopScores()
     {
-        scores.Add(new PlayerScore { name = name, score = score });
-        scores.Sort((a, b) => b.score.CompareTo(a.score));
-        if (scores.Count > maxScores)
+        return scoreList.GetRange(0, Mathf.Min(maxScoresToShow, scoreList.Count));
+    }
+
+    private void LoadScores()
+    {
+        if (File.Exists(SCORES_FILE_PATH))
         {
-            scores.RemoveAt(maxScores);
+            string json = File.ReadAllText(SCORES_FILE_PATH);
+            scoreList = JsonUtility.FromJson<ScoreList>(json).scores;
+            SortScores();
         }
-        SaveScores();
-        UpdateScoreboard();
-    }
-
-    private void UpdateScoreboard()
-    {
-        scoreboardText.text = "High Scores:\n";
-        foreach (PlayerScore score in scores)
+        else 
         {
-            scoreboardText.text += score.name + ": " + score.score + "\n";
+            AddScore(MainManager.Instance.player.playerName, MainManager.Instance.player.playerScore);
+            SaveScores();
         }
     }
 
     private void SaveScores()
     {
-        string json = JsonUtility.ToJson(scores);
-        PlayerPrefs.SetString("HighScores", json);
-        PlayerPrefs.Save();
+        ScoreList scoreListToSave = new ScoreList { scores = scoreList };
+        string json = JsonUtility.ToJson(scoreListToSave);
+        File.WriteAllText(SCORES_FILE_PATH, json);
     }
 
-    private void LoadScores()
+    public void AddScore(string name, int score)
     {
-        if (PlayerPrefs.HasKey("HighScores"))
+        ScoreEntry existingEntry = scoreList.Find(entry => entry.name == name);
+        if (existingEntry != null)
         {
-            string json = PlayerPrefs.GetString("HighScores");
-            scores = JsonUtility.FromJson<List<PlayerScore>>(json);
+            existingEntry.score = score;
+            SortScores();
         }
+        else
+        {
+            ScoreEntry newEntry = new ScoreEntry { name = name, score = score };
+            scoreList.Add(newEntry);
+            SortScores();
+            if (scoreList.Count > maxScoresToShow)
+            {
+                scoreList.RemoveAt(maxScoresToShow);
+            }
+        }
+        SaveScores();
     }
+
+    private void SortScores()
+    {
+        scoreList.Sort((entry1, entry2) => entry2.score.CompareTo(entry1.score));
+    }
+
+    [System.Serializable]
+    public class ScoreEntry
+    {
+        public string name;
+        public int score;
+    }
+
+    [System.Serializable]
+    private class ScoreList
+    {
+        public List<ScoreEntry> scores;
+    }
+
+   
 }

@@ -35,19 +35,30 @@ public class CommanderUIHandler : MonoBehaviour
         if (commander.text == "Player0")
         {
             MainManager.Instance.ResetPlayer();
-            SceneManager.LoadScene(4);
+            LoadNextScene();
         }
 
         if (commander.text == MainManager.Instance.player.playerName)
         {
-            SceneManager.LoadScene(4);
+            LoadNextScene();
         }
         else
         {
             MainManager.Instance.ResetPlayer();
             MainManager.Instance.player.playerName = commander.text;
             MainManager.Instance.SaveCurrentPlayer();
-            SceneManager.LoadScene(4);
+            LoadNextScene();
         }
+    }
+
+    public void LoadNextScene()
+    {
+
+        // Выгрузить текущую сцену
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+
+
+        // Загрузить следующую сцену
+        SceneManager.LoadScene(4);
     }
 }

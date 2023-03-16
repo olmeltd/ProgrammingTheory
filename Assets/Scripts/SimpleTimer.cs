@@ -32,6 +32,10 @@ public class SimpleTimer : MonoBehaviour
             {
                 _timeLeft = time;
                 _timerOn = false;
+                if (MainManager.Instance != null)
+                {
+                    MainManager.Instance.gameOver = true;
+                }
             }
         }
     }
