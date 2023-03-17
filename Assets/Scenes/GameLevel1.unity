@@ -4304,8 +4304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de725c1e5fba84aa39601f77db3a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 1001303541}
-  NameItem: {fileID: 2058592269}
   scoreManager: {fileID: 0}
 --- !u!65 &140484798
 BoxCollider:
@@ -14543,8 +14541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de725c1e5fba84aa39601f77db3a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 1488083172}
-  NameItem: {fileID: 1539601055}
   scoreManager: {fileID: 0}
 --- !u!65 &536247500
 BoxCollider:
@@ -21777,8 +21773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de725c1e5fba84aa39601f77db3a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 1205708572}
-  NameItem: {fileID: 537520362}
   scoreManager: {fileID: 0}
 --- !u!1001 &838176683
 PrefabInstance:
@@ -23015,7 +23009,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1d8ffbb70dc716646abe11dba492a567, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.13
+  m_Volume: 0.181
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -43208,8 +43202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de725c1e5fba84aa39601f77db3a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 2073021590}
-  NameItem: {fileID: 346957891}
   scoreManager: {fileID: 0}
 --- !u!4 &1644828149 stripped
 Transform:
@@ -43989,8 +43981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85de725c1e5fba84aa39601f77db3a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 1277308374}
-  NameItem: {fileID: 455823074}
   scoreManager: {fileID: 0}
 --- !u!65 &1695633910
 BoxCollider:
